@@ -1,0 +1,44 @@
+{
+    "environments": [
+        {
+            "env": "de",
+            "title": "Développement",
+            "host": "dev.esbconsole.com",
+            "port": 8080,
+            "username": "admin",
+            "password": "admin"
+        },
+        {
+            "env": "in",
+            "title": "Intégration",
+            "host": "in.esbconsole.com",
+            "port": 8080,
+            "username": "admin",
+            "password": "admin"
+        },
+        {
+            "env": "va",
+            "title": "Validation",
+            "host": "va.esbconsole.com",
+            "port": 8080,
+            "username": "admin",
+            "password": "admin"
+        },
+        {
+            "env": "pp",
+            "title": "PréProduction",
+            "host": "pp.esbconsole.com",
+            "port": 8080,
+            "username": "admin",
+            "password": "admin"
+        },
+        {
+            "env": "pr",
+            "title": "Production",
+            "host": "pr.esbconsole.com",
+            "port": 8080,
+            "username": "admin",
+            "password": "admin"
+        }
+    ]
+}
