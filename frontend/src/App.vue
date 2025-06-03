@@ -9,7 +9,17 @@ export default {
       error: null
     }
   },
+  methods: {
+    initializeEnvironment() {
+      // Récupérer l'environnement depuis l'URL
+      const pathParts = this.$route.path.split('/')
+      if (pathParts.length > 1 && pathParts[1]) {
+        this.currentEnv = pathParts[1]
+      }
+    }
+  },
   async created() {
+    this.initializeEnvironment()
     try {
       const response = await fetch('/api/environments')
       if (!response.ok) {
@@ -28,6 +38,15 @@ export default {
       // Rediriger vers la même page avec le nouvel environnement
       const currentRoute = this.$route.name
       this.$router.push(`/${newEnv}/${currentRoute.toLowerCase()}`)
+    },
+    '$route': {
+      immediate: true,
+      handler(to) {
+        const pathParts = to.path.split('/')
+        if (pathParts.length > 1 && pathParts[1]) {
+          this.currentEnv = pathParts[1]
+        }
+      }
     }
   }
 }
